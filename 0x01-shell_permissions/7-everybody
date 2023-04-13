@@ -1,2 +1,2 @@
 #!/bin/bash
-chmond a+x ./ hello
+chmod +111 hello
