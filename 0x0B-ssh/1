@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# server 1 login
+
+eval $("ssh-agent")
+
+ssh-add ~/ .ssh/config
+
+ssh ubuntu@54.86.4.117

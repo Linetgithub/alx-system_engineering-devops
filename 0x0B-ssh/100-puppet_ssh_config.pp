@@ -7,8 +7,8 @@ ensure -> present,
 
 file_line { 'Turn off password auth':
 path      -> '/etc/ssh/ssh_config',
-line      -> 'PasswordAuthentication',
-match     -> '^#PasswordAuthentication',
+line      -> 'PasswordAuthentication no',
+match     -> '^#PasswordAuthentication no',
 }
 
 file_line { 'Declare identity file':
