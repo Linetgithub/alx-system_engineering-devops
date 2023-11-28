@@ -1,15 +1,15 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# Update package list and install nginx
-apt-get update -y
-apt-get install -y nginx
+# Update package list and install Nginx
+sudo apt-get update -y
+sudo apt-get install -y nginx
 
-# Create the default index.html file
-echo "Hello World!" > /var/www/html/index.html
+# Configure Nginx server to return "Hello World!" on root request
+echo "Hello World!" | sudo tee /var/www/html/index.html
 
-# Start nginx (without using systemctl)
-/usr/sbin/nginx
+# Restart Nginx (without using systemctl)
+sudo /etc/init.d/nginx restart
 
-# Suppress output and run in the background
-tail -f /dev/null
+# Confirm that Nginx is running and serving the expected content
+curl localhost
 
