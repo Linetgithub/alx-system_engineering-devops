@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Update package list and install nginx
+apt-get update -y
+apt-get install -y nginx
+
+# Create the default index.html file
+echo "Hello World!" > /var/www/html/index.html
+
+# Start nginx (without using systemctl)
+/usr/sbin/nginx
+
+# Suppress output and run in the background
+tail -f /dev/null
+
